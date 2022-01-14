@@ -1,0 +1,17 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: ms-person
+  data:
+    mongodb:
+      uri: mongodb://admin:admin@172.22.145.50:27017/?authSource=payroll&readPreference=primary
+      database: payroll
+  kafka:
+    consumer:
+      bootstrap-servers: 172.22.145.50:29092
+      group-id: personGroupId
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
